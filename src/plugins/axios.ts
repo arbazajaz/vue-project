@@ -16,11 +16,11 @@ axios.defaults.withCredentials = true
 // Add CSRF token to all non-GET requests
 axios.interceptors.request.use(async (config) => {
   // For CSRF cookie request, don't add any additional headers
-  if (config.url === '/sanctum/csrf-cookie') {
-    // Remove any existing headers for CSRF cookie request
-    delete config.headers['X-XSRF-TOKEN']
-    return config
-  }
+  // if (config.url === '/sanctum/csrf-cookie') {
+  //   // Remove any existing headers for CSRF cookie request
+  //   delete config.headers['X-XSRF-TOKEN']
+  //   return config
+  // }
 
   if ((config.method as string).toLowerCase() !== 'get') {
     // Get CSRF token from cookie

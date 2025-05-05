@@ -3,5 +3,5 @@ import Auth from './components/Auth.vue';
 </script>
 
 <template>
-  <Auth />
+  <router-view />
 </template>

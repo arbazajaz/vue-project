@@ -1,5 +1,6 @@
 import axiosLib from 'axios';
 import Cookies from 'js-cookie';
+import router from '../router';
 
 const axios = axiosLib.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
@@ -34,9 +35,9 @@ axios.interceptors.response.use(
   (response) => response,
   async (error) => {
     if (error.response?.status === 401) {
-      // Clear user data and redirect to login
+      // Clear user data and redirect to login using router
       localStorage.removeItem('user');
-      window.location.href = '/';
+      router.push('/');
     }
     return Promise.reject(error);
   }
