@@ -107,7 +107,7 @@ const handleSubmit = async () => {
       throw new Error('CSRF token not found')
     }
 
-    const endpoint = isLogin.value ? '/login' : '/register'
+    const endpoint = isLogin.value ? '/participants/login' : '/participants/register'
     const response = await axios.post(endpoint, form, {
       headers: {
         'X-XSRF-TOKEN': csrfToken,

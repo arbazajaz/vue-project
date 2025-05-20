@@ -14,7 +14,7 @@ const router = useRouter()
 
 const handleLogout = async () => {
   try {
-    await axios.post('/logout')
+    await axios.post('/participants/logout')
     localStorage.removeItem('user')
     router.push('/')
   } catch (error) {
