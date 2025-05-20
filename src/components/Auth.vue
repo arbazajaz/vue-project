@@ -118,8 +118,7 @@ const handleSubmit = async () => {
     
     if (response.data.success) {
       // After successful login, get the authenticated user
-      const userResponse = await axios.get('/user')
-      
+      const userResponse = await axios.get('/me')
       // Store user data in localStorage
       localStorage.setItem('user', JSON.stringify(userResponse.data))
       
